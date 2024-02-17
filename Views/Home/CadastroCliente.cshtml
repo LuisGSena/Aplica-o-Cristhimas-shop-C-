@@ -1,0 +1,33 @@
+@model TrabalhoFinalCsharp.Models.ClienteModel
+
+@{
+    ViewData["Title"] = "Cadastro";
+}
+
+<section class="py-5" style="margin-bottom: 5em; width: 50%; margin-left: 25%">
+    <div class="container px-4 px-lg-5 mt-5">
+        <h2>Vire nosso cliente hoje! </h2>
+        <div class="card mt-4">
+            <div class="card-body">
+                <form asp-area="" asp-controller="Home" asp-action="ProcessarCadastroCliente" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <label for="NomeUsuario" class="mt-2" asp-for="NomeUsuario">Nome: </label>
+                    <input type="text" class="form-control" name="NomeUsuario" asp-for="NomeUsuario" required>
+                    <label for="CPFUsuario" class="mt-2" asp-for="CPFUsuario">CPF: </label>
+                    <input type="text" class="form-control" name="CPFUsuario" asp-for="CPFUsuario" required>
+                    <label for="EmailUsuario" class="mt-2" asp-for="EmailUsuario">Email: </label>
+                    <input type="email" class="form-control" name="EmailUsuario" asp-for="EmailUsuario" required>
+                    <label for="SenhaUsuario" class="mt-2" asp-for="SenhaUsuario">Senha: </label>
+                    <input type="password" class="form-control" name="SenhaUsuario" asp-for="SenhaUsuario" required>
+                    <label for="senha2" class="mt-2">Repita a sua senha: </label>
+                    <input type="password" class="form-control" name="senha2" required>
+                    <label for="CEPUsuario" class="mt-2" asp-for="CEPUsuario">CEP: </label>
+                    <input type="text" class="form-control" name="CEPUsuario" asp-for="CEPUsuario" required>
+                    <label for="InformacoesBancarias" class="mt-2" asp-for="InformacoesBancarias">Informações Bancárias: </label>
+                    <input type="text" class="form-control" name="InformacoesBancarias" asp-for="InformacoesBancarias" required>
+                    <button type="submit" class="btn btn-success mt-4">Criar conta</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

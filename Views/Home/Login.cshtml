@@ -1,0 +1,39 @@
+@model IEnumerable<TrabalhoFinalCsharp.Models.ProdutoModel>
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+@if (TempData["MensagemCadastro"] != null)
+{
+    <div class="alert alert-success mt-4">
+        @TempData["MensagemCadastro"]
+    </div>
+}
+
+@if (TempData["ErroCadastro"] != null)
+{
+    <div class="alert alert-danger mt-4">
+        @TempData["ErroCadastro"]
+    </div>
+}
+
+<section class="py-5" style="margin-bottom: 5em; width: 50%; margin-left: 25%">
+    <div class="container px-4 px-lg-5 mt-5">
+        <h2>Faça login agora!</h2>
+        <div class="card mt-4">
+            <div class="card-body">
+                <form asp-area="" asp-controller="Home" asp-action="ProcessarLogin" method="post">
+                    <label for="email">Email: </label>
+                    <input type="email" class="form-control" name="email" required>
+                    <label for="senha" class="mt-3">Senha: </label>
+                    <input type="password" class="form-control" name="senha" required>
+                    <button type="submit" class="btn btn-danger mt-4">Entrar</button>
+                    <p style="margin-top: 2em;">Não tem uma conta?</p>
+                    <a class="btn btn-primary" asp-area="" asp-controller="Home" asp-action="CadastroCliente">Cadastro Cliente</a>
+                    <a class="btn btn-primary" asp-area="" asp-controller="Home" asp-action="CadastroFuncionario">Cadastro Funcionário</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
